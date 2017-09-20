@@ -1,0 +1,85 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: rgb(20, 20, 20);
+}
+
+*{
+    transition: all 1s; 
+}
+
+.rect {
+    background: rgb(20,20,20);
+    border: 10px solid white;
+    background-size: 100%;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    border-radius: 3000000000px;
+}
+
+.board{
+    position: fixed;
+    top: -180px;
+    height: 100%;
+    width: 100%;
+}
+
+.main,.lose{
+    top: 0;
+    padding: 50px 0;
+    color: white;
+    font-size: 38px;
+    font-weight: lighter;
+    font-family: 'Segoe UI';
+    text-align: center;
+    text-shadow: 5px 5px 0px rgb(100, 100, 100);
+    z-index: 30;
+}
+
+#gameBoard{
+    z-index: 20;
+}
+
+#loseBoard{
+    z-index: 10;
+    opacity: 0;
+    display: none;
+}
+
+.title{
+    font-size: 70px;
+}
+
+.desc{
+    color: rgb(240, 240, 240);
+    font-size: 40px;
+}
+
+.button {
+    border: 2px solid white;
+    display: inline-block;
+    box-shadow: 5px 5px 0 rgb(100, 100, 100);
+    padding: 5px;
+    width: 300px;
+    margin:  15px;
+    cursor: pointer;
+}
+ 
+.button:hover{
+    background: white;
+    color: rgb(50, 50, 50);
+}   
+.opt{
+    margin: 200px 0;
+}
+
+.credit{
+    font-size: 21px;
+    width: 300px;
+    background: rgba(0,0,0,0.9);
+    padding: 9px 15px;
+    border-radius: 300px;
+    display: inline-block;
+}

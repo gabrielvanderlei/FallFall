@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>FALL FALL</title>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="board main" id="mainBoard">
+            <div class="title">FALL FALL</div>
+            <div class="desc">DON'T LET IT GET TO THE GROUND</div>
+            <div class="opt">
+                <div class="button" onclick="play()">PLAY</div>     
+            </div>
+            <div class="footer">
+                <div class="credit">by Gabriel Vanderlei</div>  
+            </div>
+        </div>
+        <div class="board" id="gameBoard"><div id="game"></div></div>
+        <div class="board lose" id="loseBoard">
+            <div class="title">YOU LOSE</div>
+            <div class="desc" id="score"></div>
+            <div class="opt">
+                <div class="button" onclick="play()">TRY AGAIN</div>
+                <div class="button" onclick="menu()">MENU</div>
+            </div>
+        </div>
+    </body>
+</html>

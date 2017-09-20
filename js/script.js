@@ -45,7 +45,7 @@ function load() {
                 $("#gameBoard")
                 .css({ "border-bottom": "15px solid white" });
 
-                if ($(this).attr("data-top") >= window.innerHeight) {
+                if ($(this).attr("data-top") >= (window.innerHeight + 80)) {
                     clearInterval(animation);
                     $(".rect").remove();
                     lose();

@@ -74,7 +74,7 @@ function load() {
         });
 
     i++;
-    if (time > 50) { time = time * 0.99999999;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
+    if (time > 50) { time = time * 0.999;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
     if (time < 400) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
     
     if(rotateSd % 2 == 0){

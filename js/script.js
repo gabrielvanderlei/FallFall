@@ -27,7 +27,7 @@ function load() {
     }
 
     if(playing == false){
-        leftRandom = window.innerWidth;
+        leftRandom = window.innerWidth * Math.random();
     }
 
     $("<div>")

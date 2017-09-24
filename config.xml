@@ -17,5 +17,5 @@
      Gabriel Vanderlei
   </author>
 
-    <preference name="windows-identity-name" value="GabrielVanderlei.FallFall" />
+  <icon src="res/favicon.jpg" />    
 </widget>

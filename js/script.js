@@ -81,9 +81,11 @@ function load() {
         rotateDeg = 0;
     }
 
-    $("#gameBoard").css({
-        "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg)  + ")"
-    });
+    if (playing == true) {
+        $("#gameBoard").css({
+            "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) + ")"
+        });
+    }
 
 
 

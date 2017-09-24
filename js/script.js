@@ -33,7 +33,7 @@ function load() {
     $("<div>")
         .attr({
             "class": "rect",
-            "data-top": -500,
+            "data-top": 0,
             "data-left": leftRandom
         })
 
@@ -74,7 +74,7 @@ function load() {
         });
 
     i++;
-    if (time > 50) { time = time * 0.999;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
+    if (time > 50) { time = time * 0.99;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
     if (time < 400) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
     
     if(rotateSd % 2 == 0){

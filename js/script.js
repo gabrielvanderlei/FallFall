@@ -33,7 +33,7 @@ function load() {
     $("<div>")
         .attr({
             "class": "rect",
-            "data-top": 0,
+            "data-top": -500,
             "data-left": leftRandom
         })
 

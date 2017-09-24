@@ -19,13 +19,11 @@ $(function () {
 function load() {
     
     if(window.innerHeight > window.innerWidth){
-        leftRandom = window.innerWidth * 0.9 * Math.random();
-        leftRandom = leftRandom + (window.innerHeight / 6);
+        leftRandom = window.innerWidth * 0.8 * Math.random();
     }
 
     else{
-        leftRandom = window.innerHeight * 0.9 * Math.random();
-        leftRandom = leftRandom + (window.innerWidth / 6);
+        leftRandom = window.innerHeight * 0.8 * Math.random();
     }
 
     $("<div>")

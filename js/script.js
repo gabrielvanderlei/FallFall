@@ -34,7 +34,7 @@ function load() {
         })
 
         .appendTo("#game")
-        .on("mouseover", function () {
+        .on("touchstart touchend mouseover", function() {
             $(this).remove();
             if (playing == true) {
                 score++;
@@ -42,8 +42,8 @@ function load() {
 
                 if (score % 10 == 0) { changing = 1; }
                 if (score % 3 == 0) { rotateSd++; }
-            }
-        });
+            }   
+         });
 
         $(".rect")
         .each(function () {

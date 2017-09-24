@@ -10,7 +10,7 @@ body {
 }
 
 .rect {
-    background: rgb(20,20,20);
+    background: transparent;
     border: 10px solid white;
     background-size: 100%;
     width: 160px;
@@ -40,6 +40,9 @@ body {
 
 #gameBoard{
     z-index: 20;
+    transition: all 1s, transform 9s;
+    width: 80%;
+    margin-left: 10%;
 }
 
 #loseBoard{
@@ -83,6 +86,22 @@ body {
     border-radius: 300px;
     display: inline-block;
 }
+
+.score {
+    display: block;
+    color: white;
+    font-family: "Segoe UI";
+    font-size: 128px;
+    margin-top: 50%;
+    text-align: center;
+}
+
+.alert{
+    z-index: 15;
+    opacity: 0;
+    transition: all 6s;
+}
+
 
 @media (max-width: 480px) {
     .title {

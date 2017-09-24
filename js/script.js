@@ -4,6 +4,9 @@ var time = 1000;
 var playing = false;
 var animation;
 var score = 0;
+var changing = 0;
+var rotateSd = 0;
+var leftRandom = 0;
 
 function anim() {
     return setInterval(load, time);
@@ -14,12 +17,22 @@ $(function () {
 });
 
 function load() {
+    
+    if(window.innerHeight > window.innerWidth){
+        leftRandom = window.innerWidth * 0.9 * Math.random();
+        leftRandom = leftRandom + (window.innerHeight / 6);
+    }
+
+    else{
+        leftRandom = window.innerHeight * 0.9 * Math.random();
+        leftRandom = leftRandom + (window.innerWidth / 6);
+    }
 
     $("<div>")
         .attr({
             "class": "rect",
             "data-top": 0,
-            "data-left": window.innerWidth * Math.random()
+            "data-left": leftRandom
         })
 
         .appendTo("#game")
@@ -27,6 +40,10 @@ function load() {
             $(this).remove();
             if (playing == true) {
                 score++;
+                $("#score").html(score);
+
+                if (score % 10 == 0) { changing = 1; }
+                if (score % 3 == 0) { rotateSd++; }
             }
         });
 
@@ -55,10 +72,34 @@ function load() {
         });
 
     i++;
-    $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });
-
-    if (time > 50) { time = time * 0.999999;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
+    if (time > 50) { time = time * 0.9999999;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
     if (time < 400) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
+    
+    $("#gameBoard").css({
+        "transform": "rotate(" + (rotateSd * 30) + "deg)"
+    });
+
+    if(changing == 1){
+        var bodyColor = "rgb("
+            + Math.round(Math.random() * 255) + ","
+            + Math.round(Math.random() * 255) + ","
+            + Math.round(Math.random() * 255) + ")";
+
+        var rectColor = "rgb("
+            + Math.round(Math.random() * 255) + ","
+            + Math.round(Math.random() * 255) + ","
+            + Math.round(Math.random() * 255) + ")";
+
+        $("body").css({
+            "background": bodyColor
+        });
+        
+        $("*").css({
+            "border-color": rectColor
+        });
+
+        changing = 0;
+    }
 
     clearInterval(animation);
     animation = setInterval(load, time);
@@ -69,22 +110,36 @@ function play(){
     playing = true;
     clearInterval(animation);
     $("#loseBoard")
-    .css({ "display": "none", "opacity": 0 });
+    .css({ "display": "none", "opacity": 0, "z-index": -1 });
 
     $("#mainBoard")
     .css({ "opacity": 0, "z-index": -1 });
 
     $("#gameBoard")
-    .css({ "overflow": "hidden" });
+    .css({ "overflow": "hidden", "z-index": 400 });
+    
+    $("#alertBoard")
+    .css({ "display": "block", "opacity": 1 });
 
     $(".rect").remove();
     animation = anim();
+    
+    $("#gameBoard").css({
+        "transform": "rotate(0deg)"
+    });
+
+    $("body").css({
+        "background": "rgb(20, 20, 20)"
+    })
+
+    rotateSd = 0;
+    $("#score").html(0);
 }
 
 function lose(){
     playing = false;
     $("#loseBoard")
-    .css({ "display": "block", "opacity": 1 });
+    .css({ "display": "block", "opacity": 1,"z-index":400 });
     
     $("#gameBoard")
     .css({ "overflow": "hidden", "z-index":-1 });
@@ -94,7 +149,20 @@ function lose(){
 }
 
 function menu(){
+    rotateSd = 0;
+
+    $("#gameBoard").css({
+        "transform": "rotate(0deg)"
+    });
+
+    $("body").css({
+        "background": "rgb(20, 20, 20)"
+    })
+
     
+    $("#alertBoard")
+    .css({"opacity": 0 });
+
     $("#loseBoard")
     .css({ "display": "none", "opacity": 0 });
     

@@ -26,6 +26,10 @@ function load() {
         leftRandom = window.innerHeight * 0.6 * Math.random();
     }
 
+    if(playing == false){
+        leftRandom = window.innerWidth;
+    }
+
     $("<div>")
         .attr({
             "class": "rect",

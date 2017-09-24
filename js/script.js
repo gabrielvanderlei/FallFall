@@ -1,6 +1,6 @@
 var rect = 0;
 var i = 0;
-var time = 1000;
+var time = 1300;
 var playing = false;
 var animation;
 var score = 0;
@@ -70,12 +70,22 @@ function load() {
         });
 
     i++;
-    if (time > 50) { time = time * 0.9999999;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
+    if (time > 50) { time = time * 0.99;  $(".rect").css({ "transform": "scale(" + Math.sin(i) + ")" });}
     if (time < 400) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
     
+    if(rotateSd % 2 == 0){
+        rotateDeg = 0.5;
+    }
+
+    else{
+        rotateDeg = 0;
+    }
+
     $("#gameBoard").css({
-        "transform": "rotate(" + (rotateSd * 30) + "deg)"
+        "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg)  + ")"
     });
+
+
 
     if(changing == 1){
         var bodyColor = "rgb("

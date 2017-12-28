@@ -1,6 +1,6 @@
 var rect = 0;
 var i = 0;
-var time = 1300;
+var time = 600;
 var playing = false;
 var animation;
 var score = 0;

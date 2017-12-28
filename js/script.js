@@ -74,8 +74,9 @@ function load() {
         });
 
     i++;
-    if (time > 500) { 
-        if(score <= 100){time = time * 0.59;}
+    time = time * 0.19;
+    /*if (time > 500) { 
+        if(score < 100){time = time * 0.19;}
         //else{time = (time - (score / 10));}  
         
         $(".rect").css({ 
@@ -83,7 +84,7 @@ function load() {
     }
 
     if (time < 700) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
-    
+    */
     if(rotateSd % 2 == 0){
         rotateDeg = 0.5;
     }

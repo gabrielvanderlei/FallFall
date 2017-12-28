@@ -75,7 +75,7 @@ function load() {
 
     i++;
     if (time > 500) { 
-        if(score <= 100){time = time * 0.999999;}
+        if(score <= 100){time = time * 0.59;}
         else{time = (time - (score / 10));}  
         
         $(".rect").css({ 

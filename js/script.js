@@ -1,6 +1,6 @@
 var rect = 0;
 var i = 0;
-var time = 600;
+var time = 100;
 var playing = false;
 var animation;
 var score = 0;
@@ -76,7 +76,7 @@ function load() {
     i++;
     if (time > 500) { 
         if(score <= 100){time = time * 0.59;}
-        else{time = (time - (score / 10));}  
+        //else{time = (time - (score / 10));}  
         
         $(".rect").css({ 
             "transform": "scale(" + Math.sin(i) + ")" });

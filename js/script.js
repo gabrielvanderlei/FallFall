@@ -1,6 +1,6 @@
 var rect = 0;
 var i = 0;
-var time = 100;
+var time = 1000;
 var playing = false;
 var animation;
 var score = 0;
@@ -74,17 +74,17 @@ function load() {
         });
 
     i++;
-    time = time * 0.19;
-    /*if (time > 500) { 
-        if(score < 100){time = time * 0.19;}
-        //else{time = (time - (score / 10));}  
+    
+    if (time > 500) { 
+        if(score < 100){time = time * 0.99;}
+        else{time = (time - (score / 10));}  
         
         $(".rect").css({ 
             "transform": "scale(" + Math.sin(i) + ")" });
     }
 
     if (time < 700) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
-    */
+   
     if(rotateSd % 2 == 0){
         rotateDeg = 0.5;
     }

@@ -3,6 +3,7 @@ body {
     margin: 0;
     overflow: hidden;
     background: rgb(20, 20, 20);
+    border-bottom: 3px solid white;
 }
 
 *{

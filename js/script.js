@@ -45,7 +45,7 @@ function load() {
                 $("#score").html(score);
 
                 if (score % 10 == 0) { changing = 1; }
-                if (score % 3 == 0) { rotateSd++; }
+                //if (score % 3 == 0) { rotateSd++; }
             }   
          });
 
@@ -86,7 +86,7 @@ function load() {
     if (time < 700) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
    
     if(rotateSd % 2 == 0){
-        rotateDeg = 0.5;
+        //rotateDeg = 0.5;
     }
 
     else{
@@ -95,7 +95,7 @@ function load() {
 
     if (playing == true) {
         $("#gameBoard").css({
-            "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) + ")"
+            //"transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) + ")"
         });
     }
 

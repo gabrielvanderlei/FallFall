@@ -12,6 +12,54 @@ function anim() {
     return setInterval(load, time);
 }
 
+var isPendingInterstitial = false;
+var isAutoshowInterstitial = false;
+
+function prepareInterstitialAd() {
+    if (!isPendingInterstitial) { // We won't ask for another interstitial ad if we already have an available one
+        admob.requestInterstitialAd({
+            autoShowInterstitial: isAutoshowInterstitial
+        });
+    }
+}
+
+function onAdLoadedEvent(e) {
+    if (e.adType === admob.AD_TYPE.INTERSTITIAL && !isAutoshowInterstitial) {
+        isPendingInterstitial = true;
+    }
+}
+
+function onDeviceReady() {
+    document.removeEventListener('deviceready', onDeviceReady, false);
+
+    admob.setOptions({
+        publisherId:          "pub-5169738453892313",  // Required
+        interstitialAdId:     "ca-app-pub-5169738453892313/2157461847",  // Optional
+    });
+    
+    document.addEventListener(admob.events.onAdLoaded, onAdLoadedEvent);
+    prepareIntestitialAd();
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function showInterstitialAd() {
+    if (isPendingInterstitial) {
+        admob.showInterstitialAd(function () {
+                isPendingInterstitial = false;
+                isAutoshowInterstitial = false;
+                prepareInterstitialAd();
+        });
+    } else {
+        // The interstitial is not prepared, so in this case, we want to show the interstitial as soon as possible
+        isAutoshowInterstitial = true;
+        admob.requestInterstitialAd({
+            autoShowInterstitial: isAutoshowInterstitial
+        });
+    }
+}
+
+
 $(function () {
     animation = anim();
 });

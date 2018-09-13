@@ -17,5 +17,9 @@
      Gabriel Vanderlei
   </author>
 
-  <icon src="res/favicon.jpg" />    
+  <icon src="res/favicon.jpg" /> 
+    
+  <!-- plugins -->
+  <gap:plugin name="phonegap-admob" source="npm"/>
+
 </widget>

@@ -1,64 +1,19 @@
 var rect = 0;
 var i = 0;
-var time = 1000;
+var time = 1300;
 var playing = false;
 var animation;
 var score = 0;
 var changing = 0;
 var rotateSd = 0;
 var leftRandom = 0;
+var velocity = 100;
+var difficult = 0;
+var verify = 0;
 
 function anim() {
     return setInterval(load, time);
 }
-
-var isPendingInterstitial = false;
-var isAutoshowInterstitial = false;
-
-function prepareInterstitialAd() {
-    if (!isPendingInterstitial) { // We won't ask for another interstitial ad if we already have an available one
-        admob.requestInterstitialAd({
-            autoShowInterstitial: isAutoshowInterstitial
-        });
-    }
-}
-
-function onAdLoadedEvent(e) {
-    if (e.adType === admob.AD_TYPE.INTERSTITIAL && !isAutoshowInterstitial) {
-        isPendingInterstitial = true;
-    }
-}
-
-function onDeviceReady() {
-    document.removeEventListener('deviceready', onDeviceReady, false);
-
-    admob.setOptions({
-        publisherId:          "pub-5169738453892313",  // Required
-        interstitialAdId:     "ca-app-pub-5169738453892313/2157461847",  // Optional
-    });
-    
-    document.addEventListener(admob.events.onAdLoaded, onAdLoadedEvent);
-    prepareIntestitialAd();
-}
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function showInterstitialAd() {
-    if (isPendingInterstitial) {
-        admob.showInterstitialAd(function () {
-                isPendingInterstitial = false;
-                isAutoshowInterstitial = false;
-                prepareInterstitialAd();
-        });
-    } else {
-        // The interstitial is not prepared, so in this case, we want to show the interstitial as soon as possible
-        isAutoshowInterstitial = true;
-        admob.requestInterstitialAd({
-            autoShowInterstitial: isAutoshowInterstitial
-        });
-    }
-}
-
 
 $(function () {
     animation = anim();
@@ -66,6 +21,8 @@ $(function () {
 
 function load() {
     
+
+
     if(window.innerHeight > window.innerWidth){
         leftRandom = window.innerWidth * 0.6 * Math.random();
     }
@@ -76,12 +33,13 @@ function load() {
 
     if(playing == false){
         leftRandom = window.innerWidth * Math.random();
+        leftRandom = leftRandom - window.innerWidth * 0.2;
     }
 
     $("<div>")
         .attr({
             "class": "rect",
-            "data-top": 0,
+            "data-top": -120,
             "data-left": leftRandom
         })
 
@@ -93,7 +51,7 @@ function load() {
                 $("#score").html(score);
 
                 if (score % 10 == 0) { changing = 1; }
-                //if (score % 3 == 0) { rotateSd++; }
+                if (score % 3 == 0) { rotateSd++; }
             }   
          });
 
@@ -102,17 +60,34 @@ function load() {
             $(this)
             .css({
                 "top": $(this).attr("data-top") + "px",
-                "left": $(this).attr("data-left") + "px"
+                "left": $(this).attr("data-left") + "px",
+                "opacity": ((playing)?(1):(0.6))
             })
             .attr({
-                "data-top": Number($(this).attr("data-top")) + 100
+                "data-top": Number($(this).attr("data-top")) + velocity
             })
 
             if (playing == true) {
+                difficult++;
+
+                console.log(difficult);
+                switch(difficult){
+                    case 1: velocity = 100; break;
+                    case 2: velocity = 125; break;
+                    case 3: velocity = 170; break;
+                    case 5: velocity = 200; break;
+                    case 11: velocity = 225; break;
+                    case 22: velocity = 280; break;
+                    case 44: velocity = 320; break;
+                    case 88: velocity = 340; break;
+                    case 88*2: velocity = 500; break;
+                }
+
                 $("#gameBoard")
                 .css({ "border-bottom": "15px solid white" });
 
-                if ($(this).attr("data-top") >= (window.innerHeight + 80)) {
+
+                if ($(this).attr("data-top") >= (window.innerHeight + 360)) {
                     clearInterval(animation);
                     $(".rect").remove();
                     lose();
@@ -122,9 +97,9 @@ function load() {
         });
 
     i++;
-    
+
     if (time > 500) { 
-        if(score > 100){time = time * 0.99;}
+        if(score <= 100){time = time * 0.999999;}
         else{time = (time - (score / 10));}  
         
         $(".rect").css({ 
@@ -132,9 +107,9 @@ function load() {
     }
 
     if (time < 700) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
-   
+    
     if(rotateSd % 2 == 0){
-        //rotateDeg = 0.5;
+        rotateDeg = 0.5;
     }
 
     else{
@@ -143,7 +118,7 @@ function load() {
 
     if (playing == true) {
         $("#gameBoard").css({
-            //"transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) + ")"
+            "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) + ")"
         });
     }
 
@@ -176,6 +151,9 @@ function load() {
 }
 
 function play(){
+
+    $(".board").css("border-color", "white");
+
     score = 0;
     playing = true;
     clearInterval(animation);
@@ -208,6 +186,8 @@ function play(){
 
 function lose(){
     playing = false;
+    difficult = 0;
+
     $("#loseBoard")
     .css({ "display": "block", "opacity": 1,"z-index":400 });
     
@@ -219,6 +199,7 @@ function lose(){
 }
 
 function menu(){
+    $(".board").css("border-color", "transparent");
     rotateSd = 0;
 
     $("#gameBoard").css({

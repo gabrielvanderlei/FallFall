@@ -3,7 +3,6 @@ body {
     margin: 0;
     overflow: hidden;
     background: rgb(20, 20, 20);
-    border-bottom: 3px solid white;
 }
 
 *{
@@ -22,6 +21,8 @@ body {
 
 .board{
     position: fixed;
+    border: 3px solid transparent;
+    background: rgba(20, 20, 20, 0.8);
     height: 100%;
     width: 100%;
 }
@@ -68,6 +69,7 @@ body {
     width: 300px;
     margin:  15px;
     cursor: pointer;
+    border-radius: 47px;
 }
  
 .button:hover{
@@ -109,7 +111,7 @@ body {
     }
 
     .desc{
-    font-size: 26px;
+    font-size: 17px;
     }
     
     .opt{

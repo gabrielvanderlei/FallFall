@@ -13,9 +13,20 @@
       Não deixe as bolhas cairem.
   </description>
 
-  <author href="https://gabrielvanderlei.github.com" email="gabrielvanderlei10@hotmail.com">
+  <author href="vanderlei.ga" email="gabrielvanderlei11@gmail.com">
      Gabriel Vanderlei
   </author>
 
-  <icon src="res/favicon.jpg" />    
+    <icon src="res/favicon.jpg" />   
+    <gap:plugin name="cordova-plugin-bluetooth-serial" source="npm" />
+    <preference name="android-targetSdkVersion" value="26"/>
+    <preference name='phonegap-version' value='cli-8.0.0' />
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="HeaderColor" value="#130e72" />
+    <plugin name="cordova-plugin-inappbrowser" souce="npm" />
+    <plugin name="cordova-plugin-headercolor" souce="npm" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+    <allow-navigation href="*" /> 
 </widget>

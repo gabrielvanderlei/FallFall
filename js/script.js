@@ -167,7 +167,7 @@ function play(){
     .css({ "overflow": "hidden", "z-index": 400 });
     
     $("#alertBoard")
-    .css({ "display": "block", "opacity": 1 });
+    .css({ "display": "block", "opacity": 1, "border": "none"});
 
     $(".rect").remove();
     animation = anim();
@@ -189,7 +189,7 @@ function lose(){
     difficult = 0;
 
     $("#loseBoard")
-    .css({ "display": "block", "opacity": 1,"z-index":400 });
+    .css({ "display": "block", "opacity": 1,"z-index":400, "border": "none" });
     
     $("#gameBoard")
     .css({ "overflow": "hidden", "z-index":-1 });
@@ -224,3 +224,5 @@ function menu(){
     .css({ "overflow": "", "z-index":20, "border-bottom": "none" });
     
 }
+
+//

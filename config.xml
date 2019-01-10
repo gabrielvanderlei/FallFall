@@ -61,7 +61,8 @@
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
-    <splash src="platforms/android/res/drawable/splash.png" /> 
+    <splash src="platforms/android/res/drawable/splash.png" />
+    <plugin name="phonegap-admob" source="npm"/> 
     
     <allow-navigation href="*" />
 

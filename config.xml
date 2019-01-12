@@ -44,6 +44,8 @@
 
     <preference name="android-minSdkVersion" value="19"/>
     <preference name="android-targetSdkVersion" value="23"/>
+    <preference name="cdvCompileSdkVersion" value="23"/>
+
     <preference name='phonegap-version' value='cli-8.0.0' />
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
@@ -63,7 +65,7 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
     <splash src="platforms/android/res/drawable/splash.png" />
-    <plugin name="phonegap-admob" source="npm" cdvCompileSdkVersion="24"/> 
+    <plugin name="phonegap-admob" source="npm" /> 
     
     <allow-navigation href="*" />
 

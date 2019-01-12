@@ -29,4 +29,17 @@
         <icon density="xxhdpi" src="platforms/android/res/drawable/icon.png" />
         <icon density="xxxhdpi" src="platforms/android/res/drawable/icon.png" />
     </platform>
+ 
+    <platform name="android">
+        <splash src="platforms/android/res/drawable/splash.png" density="land-hdpi"/>
+        <splash src="platforms/android/res/drawable/splash.png" density="land-ldpi"/>
+        <splash src="platforms/android/res/drawable/splash.png" density="land-mdpi"/>
+        <splash src="platforms/android/res/drawable/splash.png" density="land-xhdpi"/>
+
+        <splash src="platforms/android/res/drawable/splash.png" density="port-hdpi"/>
+        <splash src="platforms/android/res/drawable/splash.png" density="port-ldpi"/>
+        <splash src="platforms/android/res/drawable/splash.png" density="port-mdpi"/>
+        <splash src="platforms/android/res/drawable/splash.png" density="port-xhdpi"/>
+    </platform>
+
 </widget>

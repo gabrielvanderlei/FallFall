@@ -19,54 +19,6 @@ $(function () {
     animation = anim();
 });
 
-var isPendingInterstitial = false;
-var isAutoshowInterstitial = false;
-
-function prepareInterstitialAd() {
-    if (!isPendingInterstitial) { // We won't ask for another interstitial ad if we already have an available one
-        admob.requestInterstitialAd({
-            autoShowInterstitial: isAutoshowInterstitial
-        });
-    }
-}
-
-function onAdLoadedEvent(e) {
-    if (e.adType === admob.AD_TYPE.INTERSTITIAL && !isAutoshowInterstitial) {
-        isPendingInterstitial = true;
-    }
-}
-
-function onDeviceReady() {
-    document.removeEventListener('deviceready', onDeviceReady, false);
-
-    // Set AdMobAds options:
-    admob.setOptions({
-        publisherId:          "pub-3265436897748780",  // Required
-        interstitialAdId:     "ca-app-pub-3265436897748780/2577342557",  // Optional
-    });
-
-    document.addEventListener(admob.events.onAdLoaded, onAdLoadedEvent);
-    prepareIntestitialAd();
-}
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function showInterstitialAd() {
-    if (isPendingInterstitial) {
-        admob.showInterstitialAd(function () {
-                isPendingInterstitial = false;
-                isAutoshowInterstitial = false;
-                prepareInterstitialAd();
-        });
-    } else {
-        // The interstitial is not prepared, so in this case, we want to show the interstitial as soon as possible
-        isAutoshowInterstitial = true;
-        admob.requestInterstitialAd({
-            autoShowInterstitial: isAutoshowInterstitial
-        });
-    }
-}
-
 function load() {
 
     if(window.innerHeight > window.innerWidth){
@@ -137,7 +89,15 @@ function load() {
                     clearInterval(animation);
                     $(".rect").remove();
                     lose();
-                    showInterstitialAd();
+                    
+                    admob.interstitial.config({
+                        id: 'ca-app-pub-3265436897748780/2577342557',
+                    })
+                       
+                    admob.interstitial.prepare()
+                       
+                    admob.interstitial.show()
+                    
                     return false;
                 }
             }

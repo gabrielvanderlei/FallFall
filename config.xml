@@ -43,9 +43,9 @@
     </platform>
 
     <preference name="android-build-tool" value="ant|gradle" />
-    <preference name="android-minSdkVersion" value="14" />
-    <preference name="android-maxSdkVersion" value="20" />
-    <preference name="android-targetSdkVersion" value="16" />
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-maxSdkVersion" value="15" />
+    <preference name="android-targetSdkVersion" value="12" />
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
 
@@ -60,7 +60,10 @@
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
-    <plugin name="phonegap-admob" source="npm" /> 
+   
+    <plugin name="cordova-admob-sdk" source="npm" spec="~0.13.1">
+        <variable name="PLAY_SERVICES_VERSION" value="11.6.0" />
+    </plugin>
     
     <allow-navigation href="*" />
 

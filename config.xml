@@ -21,53 +21,5 @@
      Gabriel Vanderlei
   </author>
 
-    <platform name="android">
-        <icon density="ldpi" src="platforms/android/res/drawable/icon.png" />
-        <icon density="mdpi" src="platforms/android/res/drawable/icon.png" />
-        <icon density="hdpi" src="platforms/android/res/drawable/icon.png" />
-        <icon density="xhdpi" src="platforms/android/res/drawable/icon.png" />
-        <icon density="xxhdpi" src="platforms/android/res/drawable/icon.png" />
-        <icon density="xxxhdpi" src="platforms/android/res/drawable/icon.png" />
-    </platform>
- 
-    <platform name="android">
-        <splash src="platforms/android/res/drawable/splash.png" density="land-hdpi"/>
-        <splash src="platforms/android/res/drawable/splash.png" density="land-ldpi"/>
-        <splash src="platforms/android/res/drawable/splash.png" density="land-mdpi"/>
-        <splash src="platforms/android/res/drawable/splash.png" density="land-xhdpi"/>
 
-        <splash src="platforms/android/res/drawable/splash.png" density="port-hdpi"/>
-        <splash src="platforms/android/res/drawable/splash.png" density="port-ldpi"/>
-        <splash src="platforms/android/res/drawable/splash.png" density="port-mdpi"/>
-        <splash src="platforms/android/res/drawable/splash.png" density="port-xhdpi"/>
-    </platform>
-
-    <preference name="android-build-tool" value="ant|gradle" />
-    <preference name="android-minSdkVersion" value="22" />
-    <preference name="android-maxSdkVersion" value="26" />
-    <preference name="android-targetSdkVersion" value="24" />
-    <preference name="android-installLocation" value="auto" />
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
-
-    <preference name='phonegap-version' value='cli-8.0.0' />
-    <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="true" />
-    <preference name="stay-in-webview" value="false" />
-    <preference name="HeaderColor" value="#130e72" />
-
-    <plugin name="cordova-plugin-inappbrowser" souce="npm" />
-    <plugin name="cordova-plugin-headercolor" souce="npm" />
-    <plugin name="cordova-plugin-whitelist" source="npm" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" />
-    <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
-   
-    <plugin name="cordova-admob-sdk" source="npm" spec="~0.13.1">
-        <variable name="PLAY_SERVICES_VERSION" value="11.6.0" />
-    </plugin>
-
-    <allow-navigation href="*" />
-
-    <config-file platform="android" parent="/manifest" mode="merge">
-        <application android:theme="@android:style/Theme.Translucent.NoTitleBar"></application>
-    </config-file>
 </widget>

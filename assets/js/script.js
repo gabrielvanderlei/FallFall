@@ -91,7 +91,7 @@ function load() {
                     lose();
                     
                     admob.interstitial.config({
-                        id: 'ca-app-pub-3265436897748780/2577342557',
+                        id: 'ca-app-pub-5169738453892313/2157461847',
                     })
                        
                     admob.interstitial.prepare()

@@ -62,7 +62,7 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
     <splash src="platforms/android/res/drawable/splash.png" />
-    <plugin name="phonegap-admob" source="npm" cdvCompileSdkVersion="26"/> 
+    <plugin name="phonegap-admob" source="npm" cdvCompileSdkVersion="24"/> 
     
     <allow-navigation href="*" />
 

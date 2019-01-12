@@ -21,5 +21,12 @@
      Gabriel Vanderlei
   </author>
 
-
+    <platform name="android">
+        <icon density="ldpi" src="platforms/android/res/drawable/icon.png" />
+        <icon density="mdpi" src="platforms/android/res/drawable/icon.png" />
+        <icon density="hdpi" src="platforms/android/res/drawable/icon.png" />
+        <icon density="xhdpi" src="platforms/android/res/drawable/icon.png" />
+        <icon density="xxhdpi" src="platforms/android/res/drawable/icon.png" />
+        <icon density="xxxhdpi" src="platforms/android/res/drawable/icon.png" />
+    </platform>
 </widget>

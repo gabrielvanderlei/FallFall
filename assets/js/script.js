@@ -85,7 +85,7 @@ function load() {
                 .css({ "border-bottom": "15px solid white" });
 
 
-                if ($(this).attr("data-top") >= (window.innerHeight + 360)) {
+                if ($(this).attr("data-top") >= (window.innerHeight + 560)) {
                     clearInterval(animation);
                     $(".rect").remove();
                     lose();

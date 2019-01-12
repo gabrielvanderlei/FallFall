@@ -92,6 +92,8 @@ function load() {
                     
                     admob.interstitial.config({
                         id: 'ca-app-pub-5169738453892313/2157461847',
+                        isTesting: true,
+                        autoShow: true,
                     })
                        
                     admob.interstitial.prepare()
@@ -156,6 +158,24 @@ function load() {
     clearInterval(animation);
     animation = setInterval(load, time);
 }
+
+document.addEventListener('admob.banner.events.LOAD_FAIL', function(event) {
+  alert(event)
+})
+
+document.addEventListener('admob.interstitial.events.LOAD_FAIL', function(event) {
+    alert(event)
+})
+
+document.addEventListener('admob.interstitial.events.LOAD', function(event) {
+    alert(event)
+})
+
+document.addEventListener('admob.interstitial.events.CLOSE', function(event) {
+    alert(event)
+
+  admob.interstitial.prepare()
+})
 
 function play(){
 

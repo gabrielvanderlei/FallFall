@@ -11,8 +11,10 @@ var velocity = 100;
 var difficult = 0;
 var verify = 0;
 
+document.addEventListener("deviceready", onDeviceReady, true);
+
 function onDeviceReady() {
-    document.removeEventListener('deviceready', onDeviceReady, false);
+    document.removeEventListener('deviceready', onDeviceReady, true);
       alert('Anúncios configurados.');
     
       // Set AdMobAds options:
@@ -30,7 +32,6 @@ function onDeviceReady() {
     admob.requestInterstitial();
   }
   
-document.addEventListener("deviceready", onDeviceReady, false);
 
 function anim() {
     return setInterval(load, time);

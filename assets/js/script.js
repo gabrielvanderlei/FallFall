@@ -12,6 +12,7 @@ var difficult = 0;
 var verify = 0;
 
 document.addEventListener("deviceready", onDeviceReady, true);
+      alert('Deviceready configurados.');
 
 function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, true);

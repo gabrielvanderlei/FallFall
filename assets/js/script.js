@@ -15,7 +15,6 @@ document.addEventListener("deviceready", onDeviceReady, true);
       alert('Deviceready configurados.');
 
 function onDeviceReady() {
-    document.removeEventListener('deviceready', onDeviceReady, true);
       alert('Anúncios configurados.');
     
       // Set AdMobAds options:
@@ -31,5 +30,6 @@ function onDeviceReady() {
 
     // Request interstitial (will present automatically as autoShowInterstitial is set to true by default)
     admob.requestInterstitial();
+    document.removeEventListener('deviceready', onDeviceReady, true);
   }
   

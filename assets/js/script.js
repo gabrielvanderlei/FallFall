@@ -11,19 +11,6 @@ var velocity = 100;
 var difficult = 0;
 var verify = 0;
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady(){
-    document.removeEventListener("deviceready", onDeviceReady, false);
-
-    admob.interstitial.config({
-        id: 'ca-app-pub-5169738453892313/2157461847',
-        isTesting: true,
-        autoShow: true,
-    });
-       
-}
-
 function anim() {
     return setInterval(load, time);
 }
@@ -103,6 +90,12 @@ function load() {
                     $(".rect").remove();
                     lose();
                     
+                    admob.interstitial.config({
+                        id: 'ca-app-pub-5169738453892313/2157461847',
+                        isTesting: true,
+                        autoShow: true,
+                    })
+                       
                     admob.interstitial.prepare()
                        
                     admob.interstitial.show()

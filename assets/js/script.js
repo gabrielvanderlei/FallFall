@@ -11,6 +11,27 @@ var velocity = 100;
 var difficult = 0;
 var verify = 0;
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    document.removeEventListener('deviceready', onDeviceReady, false);
+    
+      // Set AdMobAds options:
+    admob.setOptions({
+      publisherId:          "NONE",                                    // Replace with your AdMob id (if you don't have any, set it to "NONE")
+      tappxIdiOS:           "NONE",            // Replace with your Tappx Id for iOS
+      tappxIdAndroid:       "pub-45642-android-4249",        // Replace with your Tappx Id for Android
+      tappxShare:           1                                          // Do not use lower tappxShare ratio if you have set publixherId to "NONE"
+    });
+
+    // Start showing banners (will show atomatically as autoShowBanner is set to true by default)
+    admob.createBannerView();
+
+    // Request interstitial (will present automatically as autoShowInterstitial is set to true by default)
+    admob.requestInterstitial();
+  }
+  
+
 function anim() {
     return setInterval(load, time);
 }
@@ -18,6 +39,7 @@ function anim() {
 $(function () {
     animation = anim();
 });
+ 
 
 function load() {
 
@@ -90,16 +112,6 @@ function load() {
                     $(".rect").remove();
                     lose();
                     
-                    admob.interstitial.config({
-                        id: 'ca-app-pub-5169738453892313/2157461847',
-                        isTesting: true,
-                        autoShow: true,
-                    })
-                       
-                    admob.interstitial.prepare()
-                       
-                    admob.interstitial.show()
-                    
                     return false;
                 }
             }
@@ -158,24 +170,6 @@ function load() {
     clearInterval(animation);
     animation = setInterval(load, time);
 }
-
-document.addEventListener('admob.banner.events.LOAD_FAIL', function(event) {
-  alert(event)
-})
-
-document.addEventListener('admob.interstitial.events.LOAD_FAIL', function(event) {
-    alert(event)
-})
-
-document.addEventListener('admob.interstitial.events.LOAD', function(event) {
-    alert(event)
-})
-
-document.addEventListener('admob.interstitial.events.CLOSE', function(event) {
-    alert(event)
-
-  admob.interstitial.prepare()
-})
 
 function play(){
 

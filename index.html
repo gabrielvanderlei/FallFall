@@ -3,21 +3,25 @@
     <head>
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta charset="utf-8" />
-        <title>FallFall</title>
+        <title>FALL FALL</title>
         <link rel="icon" href="assets/res/favicon.jpg" />
-        <script src='cordova.js'></script>
+        <script src="cordova.js"></script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/script.js"></script>
         <link rel="stylesheet" href="assets/css/style.css" />
     </head>
     <body>
         <div class="board main" id="mainBoard">
-            <div class="title">FallFall</div>
+            <div class="title">FALL FALL</div>
+            <div class="desc">NÃO DEIXE AS BOLHAS CAIREM</div>
             <br /><br />
             <div class="opt">
-                <div class="button" onclick="play()">Play</div>     
+                <div class="button" onclick="play()">JOGAR</div>     
             </div>
             <br />
+            <div class="footer">
+                <div class="credit">por Gabriel Vanderlei</div>  
+            </div>
         </div>
         <div class="board alert" id="alertBoard"><div id="score" class="score">0</div></div>
         <div class="board" id="gameBoard" ><div id="game"></div></div>
@@ -26,9 +30,9 @@
             <div class="desc" id="score"></div>
             <div class="opt">
                 <br /><br />
-                <div class="button" onclick="play()" style='width:254px;margin:-20px;'>Try Again</div>
+                <div class="button" onclick="play()" style='width:254px;margin:-20px;'>TENTAR NOVAMENTE</div>
                 <br /><br />
-                <div class="button" onclick="menu()">Menu</div>
+                <div class="button" onclick="menu()">MENU</div>
             </div>
         </div>
     </body>

@@ -15,7 +15,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
-    
+    admob.setOptions({
+        publisherId:          "ca-app-pub-5383874547802825~6746145444",                                    // Replace with your AdMob id (if you don't have any, set it to "NONE")                                 // Do not use lower tappxShare ratio if you have set publixherId to "NONE"
+      });
+
     admob.banner.config({
         id: 'ca-app-pub-5383874547802825/1281399103',
     });

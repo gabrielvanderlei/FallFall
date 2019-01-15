@@ -6,7 +6,7 @@ body {
 }
 
 *{
-    transition: all 1s; 
+    transition: all 0.5s; 
 }
 
 .rect {
@@ -65,11 +65,14 @@ body {
     border: 2px solid white;
     display: inline-block;
     box-shadow: 5px 5px 0 rgb(100, 100, 100);
-    padding: 5px;
+    padding: 9px;
     width: 300px;
-    margin:  15px;
+    margin: 0  15px;
     cursor: pointer;
-    border-radius: 47px;
+    border-radius: 5px;
+    background:white;
+    color:black;
+    font-size: 20px;
 }
  
 .button:hover{
@@ -110,6 +113,10 @@ body {
         font-size: 52px;
     }
 
+    .th1{
+        font-size: 80px;
+    }
+
     .desc{
     font-size: 17px;
     }
@@ -120,8 +127,14 @@ body {
 
     .button {
         font-size: 24px;
-        width: 60%;
-        padding: 0px 15px;
+        width: 200px;
+        padding: 4px 15px;
+        margin: 20px;
+        }
+        .bh1{
+            font-size: 28px;
+            width: 200px;
+            padding: 9px 15px;
         }
 
     .credit{

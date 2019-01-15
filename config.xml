@@ -61,7 +61,10 @@
     <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
 
     <allow-navigation href="*" />
-    <plugin name="tappx-phonegap-build" source="npm"/>
+    <plugin name="cordova-admob-pro" source="npm">
+        <variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
+    </plugin>
+
 
     <config-file platform="android" parent="/manifest" mode="merge">
         <application android:theme="@android:style/Theme.Translucent.NoTitleBar"></application>

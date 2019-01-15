@@ -17,7 +17,7 @@ function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
     
     admob.banner.config({
-        id: 'ca-app-pub-5383874547802825~6746145444',
+        id: 'ca-app-pub-5383874547802825/1281399103',
     });
         
     // Create banner

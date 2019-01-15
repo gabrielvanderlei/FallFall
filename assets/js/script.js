@@ -15,19 +15,17 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
+    
+      // Set AdMobAds options:
     admob.setOptions({
-        publisherId:          "ca-app-pub-5383874547802825~6746145444",                                    // Replace with your AdMob id (if you don't have any, set it to "NONE")                                 // Do not use lower tappxShare ratio if you have set publixherId to "NONE"
-      });
-
-    admob.banner.config({
-        id: 'ca-app-pub-5383874547802825/1281399103',
+      publisherId:          "ca-app-pub-5383874547802825~6746145444",                                    // Replace with your AdMob id (if you don't have any, set it to "NONE")
     });
-        
-    // Create banner
-    admob.banner.prepare()
 
-    // Show the banner
-    admob.banner.show()
+    // Start showing banners (will show atomatically as autoShowBanner is set to true by default)
+    admob.createBannerView();
+
+    // Request interstitial (will present automatically as autoShowInterstitial is set to true by default)
+    admob.requestInterstitial();
   }
   
 

@@ -2,8 +2,8 @@
     version='1.0' 
     encoding='utf-8'?>
 <widget 
-    id="com.gv.SpakleBall" 
-    version="1.3.5" 
+    id="com.gv.fallfall" 
+    version="2.0.0" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:gap="https://phonegap.com/ns/1.0"
     xmlns:android = "http://schemas.android.com/apk/res/android">
@@ -17,7 +17,7 @@
       Não deixe as bolhas cairem.
   </description>
 
-  <author href="vanderlei.ga" email="gabrielvanderlei11@gmail.com">
+  <author href="gabrielvanderlei.com" email="gabrielvanderlei11@gmail.com">
      Gabriel Vanderlei
   </author>
 

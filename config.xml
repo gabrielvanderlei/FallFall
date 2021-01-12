@@ -2,7 +2,7 @@
     version='1.0' 
     encoding='utf-8'?>
 <widget 
-    id="com.gv.fallfall" 
+    id="com.gv.SpakleBall" 
     version="1.3.5" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:gap="https://phonegap.com/ns/1.0"
@@ -11,7 +11,7 @@
 
 <!-- versionCode is optional and Android only -->
 
-  <name>Fall Fall</name>
+  <name>SpakleBall</name>
 
   <description>
       Não deixe as bolhas cairem.

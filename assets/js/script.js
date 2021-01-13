@@ -121,7 +121,7 @@ function load() {
         else{time = (time - (score / 10));}  
         
         $(".rect").css({ 
-            "transform": "scale(" + Math.sin(i) + ")" });
+            "transform": "scale(" + (Math.sin(i) * 1.75) + ")" });
     }
 
     if (time < 700) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }

@@ -24,6 +24,7 @@ function onDeviceReady() {
 
     if(admob){
       admob.interstitial.config(admobIntersticialConfig);
+      admob.interstitial.prepare();
     }
   }
   
@@ -215,8 +216,8 @@ function lose(){
     .html(score);
   
     if(admob){
-      admob.interstitial.prepare()
       admob.interstitial.show()
+      admob.interstitial.prepare()
     }
 }
 

@@ -24,7 +24,6 @@ function onDeviceReady() {
 
     if(admob){
       admob.interstitial.config(admobIntersticialConfig);
-      admob.interstitial.prepare();
     }
   }
   
@@ -121,7 +120,7 @@ function load() {
         else{time = (time - (score / 10));}  
         
         $(".rect").css({ 
-            "transform": "scale(" + (Math.sin(i) * 1.75) + ")" });
+            "transform": "scale(" + (Math.sin(i) * 1.1) + ")" });
     }
 
     if (time < 700) { document.body.style.filter = "hue-rotate(" + i * 0.01 + "deg)"; }
@@ -136,7 +135,7 @@ function load() {
 
     if (playing == true) {
         $("#gameBoard").css({
-            "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) + ")"
+            "transform": "rotate(" + (rotateSd * 30) + "deg) scale(" + (0.8 - rotateDeg) * 1.75 + ")"
         });
     }
 
@@ -216,8 +215,10 @@ function lose(){
     .html(score);
   
     if(admob){
-      admob.interstitial.show()
-      admob.interstitial.prepare()
+      setTimeout(function(){
+        admob.interstitial.prepare()
+        admob.interstitial.show()
+      }, 1000);
     }
 }
 

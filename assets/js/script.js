@@ -213,7 +213,7 @@ function lose(){
     setTimeout(function(){
       $("#loseBoard")
       .css({ "display": "block", "opacity": 1,"z-index":400, "border": "none" });
-    }, 300);
+    }, 3000);
     
     $("#gameBoard")
     .css({ "overflow": "hidden", "z-index":-1 });

@@ -61,7 +61,7 @@
     <icon src="platforms/android/res/drawable/icon.png" width="512" height="512" />
 
     <allow-navigation href="*" />
-    <plugin name="cordova-admob-free" source="npm">	
+    <plugin name="cordova-plugin-admob-free" source="npm">	
         <variable name="ADMOB_APP_ID" value="ca-app-pub-5383874547802825~6746145444" />	
     </plugin>
 

@@ -13,6 +13,9 @@ var verify = 0;
 
 var admobIntersticialConfig = {
   id: 'ca-app-pub-5383874547802825/4335074488',
+  "interstitialAdId":"ca-app-pub-5383874547802825/433507448",
+  "isTesting":false,
+  "autoShow":true
 };
 
 document.addEventListener("deviceready", onDeviceReady, false);

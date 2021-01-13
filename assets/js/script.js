@@ -10,34 +10,21 @@ var leftRandom = 0;
 var velocity = 400;
 var difficult = 0;
 var verify = 0;
-var admobid = {};
 
-if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
-  admobid = {
-    banner: 'ca-app-pub-5383874547802825/1281399103', // or DFP format "/6253334/dfp_example_ad"
-    interstitial: 'ca-app-pub-xxx/yyy'
-  };
-} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
-  admobid = {
-    banner: 'ca-app-pub-xxx/zzz', // or DFP format "/6253334/dfp_example_ad"
-    interstitial: 'ca-app-pub-xxx/kkk'
-  };
-} else { // for windows phone
-  admobid = {
-    banner: 'ca-app-pub-xxx/zzz', // or DFP format "/6253334/dfp_example_ad"
-    interstitial: 'ca-app-pub-xxx/kkk'
-  };
-}
+var admobIntersticialConfig = {
+  id: 'ca-app-pub-5383874547802825/4335074488',
+};
 
+admob.interstitial.prepare()
+admob.interstitial.show()
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
 
-    if(AdMob) AdMob.createBanner({
-        adId: admobid.banner,
-        position: AdMob.AD_POSITION.TOP_CENTER,
-        autoShow: true });
+    if(admob){
+      admob.interstitial.config(admobIntersticialConfig);
+    }
   }
   
 
@@ -226,6 +213,11 @@ function lose(){
 
     $("#score")
     .html(score);
+  
+    if(admob){
+      admob.interstitial.prepare()
+      admob.interstitial.show()
+    }
 }
 
 function menu(){

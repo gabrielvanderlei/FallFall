@@ -15,16 +15,10 @@ var admobIntersticialConfig = {
   id: 'ca-app-pub-5383874547802825/4335074488',
 };
 
-admob.interstitial.prepare()
-admob.interstitial.show()
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
-
-    if(admob){
-      admob.interstitial.config(admobIntersticialConfig);
-    }
   }
   
 
@@ -118,7 +112,6 @@ function load() {
     if (time > 500) { 
         if(score <= 100){time = time * 0.999999;}
         else{time = (time - (score / 10));}  
-        
         $(".rect").css({ 
             "transform": "scale(" + (Math.sin(i) * 1.1) + ")" });
     }
@@ -206,6 +199,7 @@ function lose(){
     difficult = 0;
 
     if(admob){
+      admob.interstitial.config(admobIntersticialConfig);
       admob.interstitial.prepare()
       admob.interstitial.show()
     }

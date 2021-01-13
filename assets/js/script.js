@@ -13,15 +13,17 @@ var verify = 0;
 
 var admobIntersticialConfig = {
   id: 'ca-app-pub-5383874547802825/4335074488',
-  "interstitialAdId":"ca-app-pub-5383874547802825/433507448",
-  "isTesting":false,
-  "autoShow":true
+  "isTesting":false
 };
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
+  
+    if(admob){
+      admob.interstitial.config(admobIntersticialConfig);
+    }
   }
   
 
@@ -202,7 +204,6 @@ function lose(){
     difficult = 0;
 
     if(admob){
-      admob.interstitial.config(admobIntersticialConfig);
       admob.interstitial.prepare()
       admob.interstitial.show()
     }

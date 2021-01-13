@@ -205,21 +205,21 @@ function lose(){
     playing = false;
     difficult = 0;
 
-    $("#loseBoard")
-    .css({ "display": "block", "opacity": 1,"z-index":400, "border": "none" });
+    if(admob){
+      admob.interstitial.prepare()
+      admob.interstitial.show()
+    }
+    
+    setTimeout(function(){
+      $("#loseBoard")
+      .css({ "display": "block", "opacity": 1,"z-index":400, "border": "none" });
+    }, 300);
     
     $("#gameBoard")
     .css({ "overflow": "hidden", "z-index":-1 });
 
     $("#score")
     .html(score);
-  
-    if(admob){
-      setTimeout(function(){
-        admob.interstitial.prepare()
-        admob.interstitial.show()
-      }, 1000);
-    }
 }
 
 function menu(){

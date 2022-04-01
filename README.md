@@ -1,4 +1,4 @@
-# FallFall
+# SpakleBall
 Um jogo simples feito com HTML, CSS e Javascript. 
 Utilizando o Phonegap Build para realizar a conversão para Mobile.
 
